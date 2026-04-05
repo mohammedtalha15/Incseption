@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --radius: var(--radius);
+  --font-sans: var(--font-mono);
+  --font-mono: var(--font-mono);
+  --animate-glitch: glitch 5s infinite;
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-blink: blink 1s step-end infinite;
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes glitch {
+    0%, 90%, 100% {
+      transform: translate(0);
+      filter: none;
+    }
+    92% {
+      transform: translate(-2px, 1px);
+      filter: hue-rotate(90deg);
+    }
+    94% {
+      transform: translate(2px, -1px);
+      filter: hue-rotate(-90deg);
+    }
+    96% {
+      transform: translate(-1px, -1px);
+      filter: none;
+    }
+    98% {
+      transform: translate(1px, 2px);
+      filter: hue-rotate(45deg);
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
+  }
+
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
+  }
+}
+
+@layer base {
+  :root {
+    --background: 43 23% 93%;
+    --foreground: 0 0% 4%;
+    --card: 43 23% 93%;
+    --card-foreground: 0 0% 4%;
+    --popover: 43 23% 93%;
+    --popover-foreground: 0 0% 4%;
+    --primary: 0 0% 4%;
+    --primary-foreground: 43 23% 93%;
+    --secondary: 0 0% 90%;
+    --secondary-foreground: 0 0% 4%;
+    --muted: 40 10% 85%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 20 90% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 75%;
+    --input: 0 0% 75%;
+    --ring: 0 0% 4%;
+    --radius: 0rem;
+  }
+  .dark {
+    --background: 0 0% 6%;
+    --foreground: 43 23% 93%;
+    --card: 0 0% 8%;
+    --card-foreground: 43 23% 93%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 43 23% 93%;
+    --primary: 43 23% 93%;
+    --primary-foreground: 0 0% 6%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 43 23% 93%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 20 90% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 43 23% 93%;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-mono antialiased;
+  }
+}
+
+/* Dot Grid Background */
+.dot-grid-bg {
+  background-image: radial-gradient(circle, #c4c2b8 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.dark .dot-grid-bg {
+  background-image: radial-gradient(circle, hsl(0 0% 20%) 1px, transparent 1px);
+}

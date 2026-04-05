@@ -1,0 +1,18 @@
+{
+  "name": "ayuq",
+  "version": "1.0.0",
+  "description": "Ayuq — Real-Time AI Hypoglycemia Prediction System",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently --names BACKEND,FRONTEND --prefix-colors yellow,cyan \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && python3 -m uvicorn main:app --reload --host 0.0.0.0 --port 8000",
+    "frontend": "cd frontend && npm run dev",
+    "install:all": "cd frontend && npm install",
+    "generate": "cd simulator && python3 generator.py",
+    "stream": "cd simulator && python3 streamer.py --speed 5 --interval 2",
+    "build": "cd frontend && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

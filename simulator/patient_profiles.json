@@ -1,0 +1,47 @@
+{
+  "P001": {
+    "name": "Arjun Mehta",
+    "age": 28,
+    "diabetes_type": "Type 1",
+    "lifestyle": "Active \u2014 runs and cycles regularly",
+    "primary_scenario": "post_exercise_crash",
+    "baseline_glucose": 110,
+    "typical_meals": [
+      "7:30 AM",
+      "12:30 PM",
+      "7:00 PM"
+    ],
+    "insulin_regimen": "Bolus before meals + correction",
+    "basal_insulin": 22
+  },
+  "P002": {
+    "name": "Fatima Rahman",
+    "age": 45,
+    "diabetes_type": "Type 2",
+    "lifestyle": "Sedentary \u2014 office work",
+    "primary_scenario": "nighttime_insulin_crash",
+    "baseline_glucose": 130,
+    "typical_meals": [
+      "8:00 AM",
+      "1:00 PM",
+      "8:00 PM"
+    ],
+    "insulin_regimen": "Long-acting evening insulin",
+    "basal_insulin": 30
+  },
+  "P003": {
+    "name": "Carlos Vega",
+    "age": 34,
+    "diabetes_type": "Type 1",
+    "lifestyle": "Irregular schedule \u2014 shift worker",
+    "primary_scenario": "skipped_meal_drop",
+    "baseline_glucose": 100,
+    "typical_meals": [
+      "9:00 AM",
+      "2:00 PM",
+      "9:00 PM"
+    ],
+    "insulin_regimen": "Pump + bolus",
+    "basal_insulin": 18
+  }
+}
